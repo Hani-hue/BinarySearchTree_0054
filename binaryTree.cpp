@@ -76,4 +76,11 @@ public:
             return;
         }
     }
+
+    void search(int element, Node *&parent, Node *&currentNode)
+    {
+        // This function searches the currentNode of the specified Node
+        currentNode = ROOT;
+        parent = nullptr;
+    }
 };
