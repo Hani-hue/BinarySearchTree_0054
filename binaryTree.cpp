@@ -7,4 +7,11 @@ public:
     int info;
     Node *leftchild;
     Node *rightchild;
+
+    // constructor for the class node
+    Node()
+    {
+        leftchild = nullptr;  // initialize left child to null
+        rightchild = nullptr; // initialize right child to null
+    }
 };
