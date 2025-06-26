@@ -31,5 +31,49 @@ public:
         int x;
         cout << "Masukkan Nilai: ";
         cin >> x;
+
+        // step 1: Allocate memory for the new node
+        Node *newNode = new Node();
+
+        // step 2: Assign value to the data field of the new node
+        newNode->info = x;
+
+        // step 3: Make the left and right child of the new node point
+        newNode->leftchild = nullptr;
+        newNode->rightchild = nullptr;
+
+        // step 4: Locate the node which will be the parent of the node
+        Node *parent = nullptr;
+        Node *currentNode = nullptr;
+        search(x, parent, currentNode);
+
+        // step 5: if parent is NULL (Tree is empty)
+        if (parent == nullptr)
+        {
+            // 5a: Mark the new node as ROOT
+            ROOT = newNode;
+
+            // 5b: exit
+            return;
+        }
+        // step 6: if the value in the data field of
+        // new node is less than that of parent
+        if (x < parent->info)
+        {
+            // 6a: Make the left child of parent point to the new node
+            parent->leftchild = newNode;
+
+            // 6b: exit
+            return;
+        }
+        // step 7: if the value in the data field of the new node is greater than that of the parent
+        else if (x > parent->info)
+        {
+            // 7a: make the right child of parent point to the new node
+            parent->rightchild = newNode;
+
+            // 7b: exit
+            return;
+        }
     }
 };
